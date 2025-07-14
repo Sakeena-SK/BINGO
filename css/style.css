@@ -69,7 +69,7 @@ body{
     
 
 }
-.playAgain {
+.playAgain1 {
     /* display: flex; */
     position: absolute;
     margin-top: 60px;
@@ -77,13 +77,37 @@ body{
   font-size: 18px;
 }
 
-.reset {
+.playAgain2 {
     /* display: flex; */
     position: absolute;
-    margin-top: 600px;
+    margin-top: 650px;
   padding: 10px 20px;
   font-size: 18px;
 }
 .BINGO{
     font-size: 40px;
+}
+
+.theNumberIs {
+  position: absolute;
+  top: 20px;
+  left: 40%;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  z-index: 1000;
+}
+.numbersBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 44%;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
 }

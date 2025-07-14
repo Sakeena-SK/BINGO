@@ -23,9 +23,10 @@ const solo = document.querySelector('.solo')
 const compete = document.querySelector('.compete')
 const playBoard1 = document.querySelector('.playboard1')
 const playBoard2 = document.querySelector('.playboard2')
-const reset = document.querySelector('.reset')
-const numbersBtn = document.querySelector('.numbersBtn')
-const theNumberIs = document.querySelector('.theNumberIs')
+const playAgain2 = document.querySelector('.playAgain2')
+const playAgain1 = document.querySelector('.playAgain1')
+const numbersBtn = document.querySelectorAll('.numbersBtn')
+const theNumberIs = document.querySelectorAll('.theNumberIs')
 
 const number = []
 
@@ -39,7 +40,7 @@ playBtn.addEventListener('click', () => {
 solo.addEventListener('click', () => {
     page1.style.display = 'none'
     playBoard1.style.display = 'block'
-    randomIntBoard()
+    
     arrayBoard(number)
     fillSquares('board1')
 
@@ -49,36 +50,31 @@ solo.addEventListener('click', () => {
 compete.addEventListener('click', () => {
     page1.style.display = 'none'
     playBoard2.style.display = 'flex'
-    randomIntBoard()
+    
     arrayBoard(number)
     fillSquares('board2')
-    randomIntBoard()
+    
     arrayBoard(number)
     fillSquares('board3')
 })
 
-playBoard2.addEventListener('click', () => {
+playAgain2.addEventListener('click', () => {
     playBoard2.style.display = 'none'
     homePage.style.display = 'block'
     
 })
 
-playBoard1.addEventListener('click', () => {
+playAgain1.addEventListener('click', () => {
     playBoard1.style.display = 'none'
     homePage.style.display = 'block'
     
 })
 
-const randomIntBoard = () => {
-number.length = 0
 
-    // for (i = 1; i <= 25; i++) {
-    //     number.push('')
-
-    // }
-}
 
 const arrayBoard = (array) => {
+    number.length = 0
+
     while (array.length < 25) {
         const num = Math.floor(Math.random() * 25) + 1
         // console.log(num)
@@ -97,9 +93,12 @@ function fillSquares(className) {
     })   
 }
 
-numbersBtn.addEventListener('click', () => {
-    const popNumbers = Math.floor(Math.random() * 25) + 1
-    theNumberIs.textContent = `${popNumbers}`
-})
+numbersBtn.forEach((btn, index) => {
 
+    btn.addEventListener('click', () => {
+        const popNumbers = Math.floor(Math.random() * 25) + 1
+        theNumberIs[index].textContent = `The Number Is: ${popNumbers}`
+    })
+})
+    
 
