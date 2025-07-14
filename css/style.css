@@ -1,0 +1,82 @@
+h1{
+     
+    font-size: 100px;
+    
+}
+body{
+    background-color: rgba(166, 236, 232, 0.817);
+    font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+    text-align: center;
+}
+.page1{
+    display: none;
+}
+.playboard1 {
+  display: none;
+  
+  flex-wrap: wrap;
+  width: 220px;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  
+}
+
+.board1{
+    display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(5, 50px);
+  gap: 5px;
+}
+.board2, .board3{
+    
+       display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: repeat(5, 50px);
+  gap: 5px;
+  
+}
+.player1{
+    margin: 0 30px 0 0;
+}
+.player2{
+    margin: 0 0 0 30px;
+}
+
+.playboard2 {
+    display: none;
+    flex-direction: row;
+    /* width: 500px; */
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px auto;
+    min-height: 100vh;
+  
+  
+}
+.sqr{
+     width:50px;
+     height: 50px;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.reset {
+    /* display: flex; */
+    position: absolute;
+    margin-top: 600px;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+.BINGO{
+    font-size: 40px;
+}
