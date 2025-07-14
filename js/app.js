@@ -24,8 +24,10 @@ const compete = document.querySelector('.compete')
 const playBoard1 = document.querySelector('.playboard1')
 const playBoard2 = document.querySelector('.playboard2')
 const reset = document.querySelector('.reset')
-const squares = document.querySelectorAll('.board1 .sqr')
+const squares = document.querySelectorAll('.sqr')
 // const Board2 = document.querySelector('.board2')
+
+const number = []
 
 
 playBtn.addEventListener('click', () => {
@@ -37,13 +39,20 @@ playBtn.addEventListener('click', () => {
 solo.addEventListener('click', () => {
     page1.style.display = 'none'
     playBoard1.style.display = 'block'
+    randomIntBoard()
+    arrayBoard(number)
+    fillSquares('board1')
+
     
 })
 
 compete.addEventListener('click', () => {
     page1.style.display = 'none'
     playBoard2.style.display = 'flex'
-    
+    randomIntBoard()
+    arrayBoard(number)
+    fillSquares('board2')
+    fillSquares('board3')
 })
 
 playBoard2.addEventListener('click', () => {
@@ -58,26 +67,34 @@ playBoard1.addEventListener('click', () => {
     
 })
 
-const number = []
 const randomIntBoard = (board1) => {
-number.length = 0
+// number.length = 0
 
-    for (i = 1; i<=25; i++) {
-        number.push(i)
+    for (i = 1; i <= 25; i++) {
+        number.push('')
 
     }
 }
 
 const arrayBoard = (array) => {
-    for (i = array.length - 1; i > 0; i--) {
-        num = Math.floor(Math.random() * (i + 1))
+    while (array.length < 25) {
+        const num = Math.floor(Math.random() * 25) + 1
+        // console.log(num)
+            if (!array.includes(num)) {
+            // array[i] = num    
+            array.push(num) 
+            }
     }
-arrayBoard(number)
-
-squares.forEach((square, index) => {
-    square.textContent = number[index]
-})
+    console.log(array)
 }
+function fillSquares(className) {
+    const squares = document.querySelectorAll(`.${className} .sqr`)
+    squares.forEach((square, index) => {
+        square.textContent = number[index]
+        // console.log(square)
+    })   
+}
+
 
 
 
