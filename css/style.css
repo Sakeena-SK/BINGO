@@ -20,7 +20,7 @@ body{
   width: 220px;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 300px auto;
   
 }
 
@@ -68,6 +68,13 @@ body{
     align-items: center;
     
 
+}
+.playAgain {
+    /* display: flex; */
+    position: absolute;
+    margin-top: 60px;
+  padding: 10px 20px;
+  font-size: 18px;
 }
 
 .reset {

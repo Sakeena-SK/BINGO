@@ -24,8 +24,8 @@ const compete = document.querySelector('.compete')
 const playBoard1 = document.querySelector('.playboard1')
 const playBoard2 = document.querySelector('.playboard2')
 const reset = document.querySelector('.reset')
-const squares = document.querySelectorAll('.sqr')
-// const Board2 = document.querySelector('.board2')
+const numbersBtn = document.querySelector('.numbersBtn')
+const theNumberIs = document.querySelector('.theNumberIs')
 
 const number = []
 
@@ -52,6 +52,8 @@ compete.addEventListener('click', () => {
     randomIntBoard()
     arrayBoard(number)
     fillSquares('board2')
+    randomIntBoard()
+    arrayBoard(number)
     fillSquares('board3')
 })
 
@@ -67,13 +69,13 @@ playBoard1.addEventListener('click', () => {
     
 })
 
-const randomIntBoard = (board1) => {
-// number.length = 0
+const randomIntBoard = () => {
+number.length = 0
 
-    for (i = 1; i <= 25; i++) {
-        number.push('')
+    // for (i = 1; i <= 25; i++) {
+    //     number.push('')
 
-    }
+    // }
 }
 
 const arrayBoard = (array) => {
@@ -95,6 +97,9 @@ function fillSquares(className) {
     })   
 }
 
-
+numbersBtn.addEventListener('click', () => {
+    const popNumbers = Math.floor(Math.random() * 25) + 1
+    theNumberIs.textContent = `${popNumbers}`
+})
 
 
