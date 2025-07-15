@@ -16,6 +16,7 @@
 // -If a player wins display 'player wins'
 // -optiions to 'play again' or 'restart the game' 
 
+
 const homePage = document.querySelector('.Homepage')
 const page1 = document.querySelector('.page1')
 const playBtn = document.querySelector('.Play')
@@ -27,7 +28,10 @@ const playAgain2 = document.querySelector('.playAgain2')
 const playAgain1 = document.querySelector('.playAgain1')
 const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
+const squareMarks = document.querySelectorAll('.sqr')
 
+allowNumberPress = null
+const usedNumbers = []
 const number = []
 
 
@@ -43,6 +47,7 @@ solo.addEventListener('click', () => {
     
     arrayBoard(number)
     fillSquares('board1')
+    markTheSquares()
 
     
 })
@@ -56,11 +61,15 @@ compete.addEventListener('click', () => {
     
     arrayBoard(number)
     fillSquares('board3')
+    markTheSquares()
 })
 
 playAgain2.addEventListener('click', () => {
     playBoard2.style.display = 'none'
     homePage.style.display = 'block'
+
+    usedNumbers.length = 0
+    allowNumberPress = null
     
 })
 
@@ -68,6 +77,8 @@ playAgain1.addEventListener('click', () => {
     playBoard1.style.display = 'none'
     homePage.style.display = 'block'
     
+     usedNumbers.length = 0
+    allowNumberPress = null
 })
 
 
@@ -96,9 +107,30 @@ function fillSquares(className) {
 numbersBtn.forEach((btn, index) => {
 
     btn.addEventListener('click', () => {
+
         const popNumbers = Math.floor(Math.random() * 25) + 1
+        tries = 0
+        while (usedNumbers.includes(popNumbers)) {
+             popNumbers = Math.floor(Math.random() * 25) + 1
+             tries++
+        }
+        allowNumberPress = popNumbers
+        usedNumbers.push(popNumbers)
         theNumberIs[index].textContent = `The Number Is: ${popNumbers}`
     })
 })
     
+markTheSquares = () => {
+    squareMarks.forEach(squareMark => {
+        squareMark.addEventListener('click', () => {
+            squareNumber = parseInt(squareMark.textContent)
+            if (squareNumber === allowNumberPress){
+                if(!squareMark.classList.contains('marked')){
+                    squareMark.classList.add('marked')
+                }
+            }
+        })
+
+    })
+}
 
