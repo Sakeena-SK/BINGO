@@ -154,5 +154,33 @@ markTheSquares = () => {
 }
 
 function checkForBingo() {
+    size = 5
+    const  squares = Array.from(document.querySelectorAll('.board1 .sqr'))
+
+    grid = []
+    for (i = 0; i < size; i++){
+        grid.push(squares.slice(i * size, (i + 1) * size))
+    }
+    count = 0
+//rows
+    for (i = 0; i < size; i++){
+        if (grid[i].every(cell => cell.classlist.contains('marked'))){
+            count++
+        }
+    }
+//colum
+    for (j =0; j < size; j++){
+        let columnMarked = true
+        for (i = 0; i < size; i++) {
+            if(!grid[i][j].classlist.contains('marked')) {
+                columnMarked = false
+                break
+            }
+        }
+        if (columnMarked) {
+            count++
+        }
+    }
+
     
 }
