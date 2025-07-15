@@ -140,3 +140,9 @@ body{
 display: block;
 margin: 0 auto;
 }
+
+.bingoLetters.crossed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.6;
+}

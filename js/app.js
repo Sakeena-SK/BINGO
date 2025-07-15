@@ -29,6 +29,7 @@ const playAgain1 = document.querySelector('.playAgain1')
 const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
+const letters = document.querySelectorAll('.letters')
 
 
 allowNumberPress = null
@@ -182,5 +183,41 @@ function checkForBingo() {
         }
     }
 
-    
+//diagonal
+    diagonal = true
+    for (i = 0; i < size; i++) {
+        if (!grid[i][size - i - 1].classlist.contains('marked')) {
+            diagonal =  false
+            break
+        }
+    }
+    if (diagonal) {
+        count++
+    }
+
+//diagonal2
+    diagonal2 = true
+    for (i = 0; i < size; i++) {
+        if (!grid[i][size - i - 1].classlist.contains('marked')) {
+            diagonal2 =  false
+            break
+        }
+    }
+    if (diagonal2) {
+        count++
+    }
+    bingoDisply(count)
+
 }
+
+const bingoDisply = (count) => {
+    letters.forEach((letter, index) => {
+        if (index < count) {
+            letter.classList.add('crossed')
+        }
+        else {
+            letter.classList.remove('crossed')
+        }
+    })
+}
+
