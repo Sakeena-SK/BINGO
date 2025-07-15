@@ -30,9 +30,11 @@ const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
 
+
 allowNumberPress = null
 const usedNumbers = []
 const number = []
+
 
 
 playBtn.addEventListener('click', () => {
@@ -70,6 +72,14 @@ playAgain2.addEventListener('click', () => {
 
     usedNumbers.length = 0
     allowNumberPress = null
+
+    squareMarks.forEach(squareMark => {
+        squareMark.classList.remove('marked')
+    })
+
+    theNumberIs.forEach(element => {
+        element.textContent = 'The number Is:'
+    })
     
 })
 
@@ -79,6 +89,15 @@ playAgain1.addEventListener('click', () => {
     
      usedNumbers.length = 0
     allowNumberPress = null
+
+    squareMarks.forEach(squareMark => {
+        squareMark.classList.remove('marked')
+    })
+    theNumberIs.forEach(element => {
+        element.textContent = 'The number Is:'
+    })
+    
+
 })
 
 
@@ -134,3 +153,6 @@ markTheSquares = () => {
     })
 }
 
+function checkForBingo() {
+    
+}
