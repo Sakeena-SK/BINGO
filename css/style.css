@@ -1,10 +1,13 @@
 h1{
      
-    font-size: 100px;
-    
+    font-size: 120px;
+}
+.Homepage {
+  font-size: 30px;
 }
 body{
-    background-color: rgba(166, 236, 232, 0.817);
+    background-color: rgba(171, 235, 231, 0.817);
+    color: #800020;
     font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
@@ -15,8 +18,31 @@ body{
   align-items: center;
   min-height: 100vh;
 }
+.Play {
+  background-color: white;
+  border-width: 1px;
+  border-color: #800020;
+  padding: 20px 30px 20px 30px;
+  color: #800020;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 .page1{
     display: none;
+    font-size: 30px;
+}
+.solo, .compete {
+  background-color: white;
+  border-width: 1px;
+  border-color: #800020;
+  padding: 20px 30px 20px 30px;
+  color: #800020;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: medium;
+  margin: 5px 5px 0 5px;
 }
 .playboard1 {
   display: none;
@@ -28,6 +54,11 @@ body{
   margin: auto;
   
 }
+
+.letters {
+  font-size: 40px;
+}
+
 
 .board1{
     display: grid;
@@ -92,9 +123,15 @@ body{
 
 }
 .playAgain1 {
-    /* display: flex; */
-    /* position: absolute; */
-    margin-top: 60px;
+  background-color: white;
+  border-width: 1px;
+  border-color: #800020;
+  padding: 20px 30px 20px 30px;
+  color: #800020;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 60px;
   padding: 10px 20px;
   font-size: 18px;
 }
@@ -120,19 +157,20 @@ body{
  
 }
 .numbersBtn {
-  /* position: absolute; */
-  /* bottom: 20px; */
-  /* left: 44%; */
+   background-color: white;
+  border-width: 1px;
+  border-color: #800020;
+  padding: 20px 30px 20px 30px;
+  color: #800020;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
  text-align: center;
  margin-top: 20px;
-
-
+ font-size: medium;
 }
 
-.buttons1 {
-  
 
-}
 .buttons2 {
   /* position: absolute; */
   /* display: flex;
@@ -143,7 +181,7 @@ margin: 0 auto;
 
 .letters.crossed {
   text-decoration: line-through;
-  color: rgb(252, 10, 10);
+  
   opacity: 0.6;
 }
 .popUp.hidden {
