@@ -46,7 +46,7 @@ body{
 }
 .playboard1 {
   display: none;
-  
+  flex-direction: column;
   flex-wrap: wrap;
   /* width: 220px; */
   justify-content: center;
@@ -65,6 +65,7 @@ body{
   grid-template-columns: repeat(5, 50px);
   grid-template-rows: repeat(5, 50px);
   gap: 5px;
+  margin-left: 19px;
 }
 .board2, .board3{
     
@@ -116,11 +117,6 @@ body{
     justify-content: center;
     align-items: center;
 
-   
-  
-
-    
-
 }
 .playAgain1 {
   background-color: white;
@@ -137,27 +133,7 @@ body{
 }
 
 .playAgain2 {
-    /* display: flex; */
-    /* position: absolute; */
-    margin-top: 650px;
-  padding: 10px 20px;
-  font-size: 18px;
-}
-.BINGO{
-    font-size: 40px;
-    text-align: center;
-}
-
-.theNumberIs {
-  /* position: absolute; */
-  /* top: 20px;
-  left: 50%; */
-  text-align: center;
-  margin: auto;
- 
-}
-.numbersBtn {
-   background-color: white;
+  background-color: white;
   border-width: 1px;
   border-color: #800020;
   padding: 20px 30px 20px 30px;
@@ -165,12 +141,53 @@ body{
   font-family: "Luckiest Guy", cursive;
   font-weight: 400;
   font-style: normal;
- text-align: center;
- margin-top: 20px;
- font-size: medium;
+  margin-top: 500px;
+  padding: 10px 20px;
+  font-size: 18px;
+  
+  
+}
+.theNumberIs {
+  /* position: absolute; */
+  /* top: 20px;
+  left: 50%; */
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px; 
+}
+.popUp {
+  font-size: 40px;
+  color: #d90429;
+  font-weight: bold;
+  margin: 10px 0;
+  animation: blink 1s infinite alternate;
+}
+.BINGO{
+    font-size: 40px;
+    text-align: center;
 }
 
+.numbersBtn {
+  background-color: white;
+  border-width: 1px;
+  border-color: #800020;
+  padding: 20px 30px 20px 30px;
+  color: #800020;
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 60px;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+}
 
+.buttons1 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
 .buttons2 {
   /* position: absolute; */
   /* display: flex;
@@ -186,4 +203,15 @@ margin: 0 auto;
 }
 .popUp.hidden {
   display: none;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.6; }
+}
+.bingoLetters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
