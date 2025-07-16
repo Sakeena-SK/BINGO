@@ -143,6 +143,6 @@ margin: 0 auto;
 
 .bingoLetters.crossed {
   text-decoration: line-through;
-  color: gray;
+  color: rgb(236, 24, 24);
   opacity: 0.6;
 }

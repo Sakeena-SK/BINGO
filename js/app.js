@@ -29,7 +29,7 @@ const playAgain1 = document.querySelector('.playAgain1')
 const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
-const letters = document.querySelectorAll('.letters')
+const letters = document.querySelectorAll('.playboard1 .letters')
 
 
 allowNumberPress = null
@@ -128,7 +128,7 @@ numbersBtn.forEach((btn, index) => {
 
     btn.addEventListener('click', () => {
 
-        const popNumbers = Math.floor(Math.random() * 25) + 1
+        let popNumbers = Math.floor(Math.random() * 25) + 1
         tries = 0
         while (usedNumbers.includes(popNumbers)) {
              popNumbers = Math.floor(Math.random() * 25) + 1
@@ -147,6 +147,7 @@ markTheSquares = () => {
             if (squareNumber === allowNumberPress){
                 if(!squareMark.classList.contains('marked')){
                     squareMark.classList.add('marked')
+                    checkForBingo()
                 }
             }
         })
@@ -165,7 +166,7 @@ function checkForBingo() {
     count = 0
 //rows
     for (i = 0; i < size; i++){
-        if (grid[i].every(cell => cell.classlist.contains('marked'))){
+        if (grid[i].every(cell => cell.classList.contains('marked'))){
             count++
         }
     }
@@ -173,7 +174,7 @@ function checkForBingo() {
     for (j =0; j < size; j++){
         let columnMarked = true
         for (i = 0; i < size; i++) {
-            if(!grid[i][j].classlist.contains('marked')) {
+            if(!grid[i][j].classList.contains('marked')) {
                 columnMarked = false
                 break
             }
@@ -186,7 +187,7 @@ function checkForBingo() {
 //diagonal
     diagonal = true
     for (i = 0; i < size; i++) {
-        if (!grid[i][size - i - 1].classlist.contains('marked')) {
+        if (!grid[i][i].classList.contains('marked')) {
             diagonal =  false
             break
         }
@@ -198,7 +199,7 @@ function checkForBingo() {
 //diagonal2
     diagonal2 = true
     for (i = 0; i < size; i++) {
-        if (!grid[i][size - i - 1].classlist.contains('marked')) {
+        if (!grid[i][size - i - 1].classList.contains('marked')) {
             diagonal2 =  false
             break
         }
@@ -207,6 +208,7 @@ function checkForBingo() {
         count++
     }
     bingoDisply(count)
+    console.log(count)
 
 }
 
