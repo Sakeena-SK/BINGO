@@ -34,8 +34,10 @@ Creating a repositrie then clone it and creat an HTML, CSS and javascript files.
 # Procedure
 Starting with HTML code to build the structure of the game.Next, started a bit on the styling of the game so that it can be imagenable. Then i worked on the javascript which took most of the time. Lastly, the final touches of the styling.
 
+At the end click to try my [BINGO](https://bingo-game-s.surge.sh/) game many things and many ideas changed from the wirefram and the psoducode.
+
 ## Conclusion
-To sum up, the most enjoiable part for me was the HTML i 
+To sum up, the most enjoiable part for me was the HTML. I enjoyed imagining the structure of the game. When i started the java script i was lost at the beginning but when i started understanding i was enjoying the coding. The most difficult part was the CSS it was not working very well with me till the end.
 
 
 # Credits
