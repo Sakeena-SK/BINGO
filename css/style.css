@@ -103,9 +103,15 @@ body{
     /* margin: 30px auto;
     min-height: 100vh; */
     text-align: center;
-  
-  
-}
+    
+    
+  }
+  .playersContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
 .sqr {
      width:50px;
      height: 50px;

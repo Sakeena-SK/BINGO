@@ -1,6 +1,6 @@
 # BINGO
 
-## Description
+# Description
 web based Bingo game supports 1 to 2 players. Built using HTML, CSS, Javascript. features of the game:
 * Player have the option to play solo or to compete with a second player each with their own board.
 * Each player get his own randomly generated 5 x 5 Bingo board.
@@ -31,6 +31,12 @@ To start with, i did a [To do list](https://trello.com/invite/b/686f5b574f570c1d
 
 Creating a repositrie then clone it and creat an HTML, CSS and javascript files. then i will start by following the steps in the soducode.
 
+# Procedure
+Starting with HTML code to build the structure of the game.Next, started a bit on the styling of the game so that it can be imagenable. Then i worked on the javascript which took most of the time. Lastly, the final touches of the styling.
 
-## Credits
+## Conclusion
+To sum up, the most enjoiable part for me was the HTML i 
+
+
+# Credits
 [Chatgpt](http://chatgpt.com/c/686f70b0-5350-8007-8d1e-10fed59104d7)
