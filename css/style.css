@@ -141,8 +141,8 @@ display: block;
 margin: 0 auto;
 }
 
-.bingoLetters.crossed {
+.letters.crossed {
   text-decoration: line-through;
-  color: rgb(236, 24, 24);
+  color: rgb(252, 10, 10);
   opacity: 0.6;
 }

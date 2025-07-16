@@ -29,7 +29,8 @@ const playAgain1 = document.querySelector('.playAgain1')
 const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
-const letters = document.querySelectorAll('.playboard1 .letters')
+// const letters = document.querySelectorAll('.playboard1 .letters')
+
 
 
 allowNumberPress = null
@@ -147,7 +148,16 @@ markTheSquares = () => {
             if (squareNumber === allowNumberPress){
                 if(!squareMark.classList.contains('marked')){
                     squareMark.classList.add('marked')
-                    checkForBingo()
+                    
+                    if (squareMark.closest('.board1')) {
+                        checkForBingo('.board1', '.playboard1 .letters')
+                    }
+                    if (squareMark.closest('.board2')) {
+                        checkForBingo('.board2', '.playboard2 .letters')
+                    }
+                    if (squareMark.closest('.board3')) {
+                        checkForBingo('.board3', '.playboard2 .letters')
+                    }
                 }
             }
         })
@@ -155,9 +165,10 @@ markTheSquares = () => {
     })
 }
 
-function checkForBingo() {
+function checkForBingo(boardnum, selectLetter) {
     size = 5
-    const  squares = Array.from(document.querySelectorAll('.board1 .sqr'))
+    const  squares = Array.from(document.querySelectorAll(`${boardnum} .sqr`))
+    const letters = document.querySelectorAll(selectLetter)
 
     grid = []
     for (i = 0; i < size; i++){
@@ -170,7 +181,7 @@ function checkForBingo() {
             count++
         }
     }
-//colum
+//columns
     for (j =0; j < size; j++){
         let columnMarked = true
         for (i = 0; i < size; i++) {
