@@ -16,7 +16,8 @@
 // -If a player wins display 'player wins'
 // -optiions to 'play again' or 'restart the game' 
 
-
+let time = 180
+let player1count = 0
 const homePage = document.querySelector('.Homepage')
 const page1 = document.querySelector('.page1')
 const playBtn = document.querySelector('.Play')
@@ -29,7 +30,9 @@ const playAgain1 = document.querySelector('.playAgain1')
 const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
-// const letters = document.querySelectorAll('.playboard1 .letters')
+const timerDisplay = document.createElement('p')
+
+
 
 
 
@@ -52,6 +55,12 @@ solo.addEventListener('click', () => {
     arrayBoard(number)
     fillSquares('board1')
     markTheSquares()
+
+    player1count = 0
+    time = 5 * 60
+
+    timerDisplay.id = 'timer'
+    playBoard1.
 
     
 })
@@ -153,10 +162,10 @@ markTheSquares = () => {
                         checkForBingo('.board1', '.playboard1 .letters')
                     }
                     if (squareMark.closest('.board2')) {
-                        checkForBingo('.board2', '.playboard2 .letters')
+                        checkForBingo('.board2', '.bingoLetters1 .letters')
                     }
                     if (squareMark.closest('.board3')) {
-                        checkForBingo('.board3', '.playboard2 .letters')
+                        checkForBingo('.board3', '.bingoLetters2 .letters')
                     }
                 }
             }
@@ -218,12 +227,12 @@ function checkForBingo(boardnum, selectLetter) {
     if (diagonal2) {
         count++
     }
-    bingoDisply(count)
+    bingoDisply(count, letters)
     console.log(count)
 
 }
 
-const bingoDisply = (count) => {
+const bingoDisply = (count, letters) => {
     letters.forEach((letter, index) => {
         if (index < count) {
             letter.classList.add('crossed')
