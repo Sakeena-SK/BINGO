@@ -31,6 +31,8 @@ const numbersBtn = document.querySelectorAll('.numbersBtn')
 const theNumberIs = document.querySelectorAll('.theNumberIs')
 const squareMarks = document.querySelectorAll('.sqr')
 const timerDisplay = document.createElement('p')
+const popup = document.querySelector('.popUp')
+const popupText = document.getElementById('popupText')
 
 
 
@@ -67,12 +69,10 @@ solo.addEventListener('click', () => {
     timerDisplay.textContent = formatTime(time)
     if (time <= 0) {
         clearInterval(timeInt)
-        alert("Time's up! You lost 😢")
-        playAgain1.click()
+        popupMessage("Time's up! You lost 😢")
+        // playAgain1.click()
     }
    }, 1000)
-
-    
 })
 
 compete.addEventListener('click', () => {
@@ -88,6 +88,7 @@ compete.addEventListener('click', () => {
 })
 
 playAgain2.addEventListener('click', () => {
+    popup.classList.add('hidden')
     playBoard2.style.display = 'none'
     homePage.style.display = 'block'
 
@@ -105,6 +106,7 @@ playAgain2.addEventListener('click', () => {
 })
 
 playAgain1.addEventListener('click', () => {
+    popup.classList.add('hidden')
     playBoard1.style.display = 'none'
     homePage.style.display = 'block'
     
@@ -260,20 +262,20 @@ const bingoDisply = (count, letters) => {
         if (parent && parent.classList.contains('playboard1')) {
         clearInterval(timeInt)
         setTimeout(() => {
-            alert("You won! 🎉")
-            playAgain1.click()
+            popupMessage("You won! 🎉")
+            
         }, 200)
     }
         else if (parent && parent.classList.contains('bingoLetters1')) {
         setTimeout(() => {
-            alert("player 1 wins! 🎉")
-            playAgain2.click()
+            popupMessage("player 1 wins! 🎉")
+            
         }, 200)
     }
         else if (parent && parent.classList.contains('bingoLetters2')) {
         setTimeout(() => {
-            alert("player 2 wins! 🎉")
-            playAgain2.click()
+            popupMessage("player 2 wins! 🎉")
+            
         }, 200)
         }
     }
@@ -285,3 +287,7 @@ const formatTime = (seconds) => {
     return `${min}:${sec < 10 ? '0' : ''}${sec}`
 }
 
+const popupMessage = (message) => {
+    popupText.textContent = message
+    popup.classList.remove('hidden')
+}
