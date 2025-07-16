@@ -17,7 +17,7 @@
 // -optiions to 'play again' or 'restart the game' 
 
 let time = 180
-let player1count = 0
+let timeInt
 const homePage = document.querySelector('.Homepage')
 const page1 = document.querySelector('.page1')
 const playBtn = document.querySelector('.Play')
@@ -55,12 +55,22 @@ solo.addEventListener('click', () => {
     arrayBoard(number)
     fillSquares('board1')
     markTheSquares()
-
+    
     player1count = 0
-    time = 5 * 60
+   timerDisplay.id = 'timer'
+   timerDisplay.textContent = formatTime(time)
+   playBoard1.appendChild(timerDisplay)
 
-    timerDisplay.id = 'timer'
-    playBoard1.
+   clearInterval(timeInt)
+   timeInt = setInterval(() => {
+    time--
+    timerDisplay.textContent = formatTime(time)
+    if (time <= 0) {
+        clearInterval(timeInt)
+        alert("Time's up! You lost 😢")
+        playAgain1.click()
+    }
+   }, 1000)
 
     
 })
@@ -107,7 +117,10 @@ playAgain1.addEventListener('click', () => {
     theNumberIs.forEach(element => {
         element.textContent = 'The number Is:'
     })
-    
+    clearInterval(timeInt)
+    time = 180
+    timerDisplay.textContent = formatTime(time)
+
 
 })
 
@@ -241,5 +254,34 @@ const bingoDisply = (count, letters) => {
             letter.classList.remove('crossed')
         }
     })
+
+    if (count === 5){
+        const parent = letters[0].closest('.playboard1') || letters[0].closest('.bingoLetters1') || letters[0].closest('.bingoLetters2')
+        if (parent && parent.classList.contains('playboard1')) {
+        clearInterval(timeInt)
+        setTimeout(() => {
+            alert("You won! 🎉")
+            playAgain1.click()
+        }, 200)
+    }
+        else if (parent && parent.classList.contains('bingoLetters1')) {
+        setTimeout(() => {
+            alert("player 1 wins! 🎉")
+            playAgain2.click()
+        }, 200)
+    }
+        else if (parent && parent.classList.contains('bingoLetters2')) {
+        setTimeout(() => {
+            alert("player 2 wins! 🎉")
+            playAgain2.click()
+        }, 200)
+        }
+    }
+}
+
+const formatTime = (seconds) => {
+    const min = Math.floor(seconds / 60)
+    const sec = seconds % 60
+    return `${min}:${sec < 10 ? '0' : ''}${sec}`
 }
 
