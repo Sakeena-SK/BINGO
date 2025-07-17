@@ -70,7 +70,7 @@ solo.addEventListener('click', () => {
     if (time <= 0) {
         clearInterval(timeInt)
         popupMessage("Time's up! You lost 😢")
-        // playAgain1.click()
+        
     }
    }, 1000)
 })
@@ -133,9 +133,7 @@ const arrayBoard = (array) => {
 
     while (array.length < 25) {
         const num = Math.floor(Math.random() * 25) + 1
-        // console.log(num)
-            if (!array.includes(num)) {
-            // array[i] = num    
+            if (!array.includes(num)) {  
             array.push(num) 
             }
     }
@@ -145,7 +143,6 @@ function fillSquares(className) {
     const squares = document.querySelectorAll(`.${className} .sqr`)
     squares.forEach((square, index) => {
         square.textContent = number[index]
-        // console.log(square)
     })   
 }
 
