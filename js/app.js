@@ -78,7 +78,7 @@ solo.addEventListener('click', () => {
 compete.addEventListener('click', () => {
     page1.style.display = 'none'
     playBoard2.style.display = 'flex'
-    
+    playBoard2.style.flexDirection = 'row'
     arrayBoard(number)
     fillSquares('board2')
     
